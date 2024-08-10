@@ -13,8 +13,8 @@ class MongoDBTestCluster:
     def retrieve_connection_alias(self) -> str:
         return self.connection_alias
     
-    def connect_to_mongodb_test_cluster(self) -> None:
-        connect(alias=self.connection_alias)
+    def connect_to_mongodb_test_cluster(self) -> any:
+        return connect(alias=self.connection_alias)
 
     
     def disconnect_from_mongodb_test_cluster(self) -> None:
