@@ -2,7 +2,7 @@ import configparser
 import os
 import db_manager.database_connection
 
-file_path: str = os.path.abspath(os.path.relpath("db_manager"))
+file_path: str = os.path.abspath("db_manager")
 
 config = configparser.ConfigParser(interpolation=configparser.ExtendedInterpolation())
 
