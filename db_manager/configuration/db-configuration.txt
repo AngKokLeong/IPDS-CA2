@@ -1,0 +1,2 @@
+[DATABASE]
+mongodb_connection_string: mongodb+srv://sg-green-plan-db-admin:1rhEvWxtWf9QoZ9t@test-cluster.4h9vrzs.mongodb.net/?retryWrites=true&w=majority&appName=Test-Cluster
