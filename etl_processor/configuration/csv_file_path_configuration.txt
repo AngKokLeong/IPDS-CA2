@@ -5,7 +5,7 @@ data_source_file_path: ${DEFAULT:module_file_path}/data_source
 energy_csv_file_path: ${DEFAULT:data_source_file_path}/energy
 food_csv_file_path: ${DEFAULT:data_source_file_path}/food
 
-[CSV_FILES]
+[DATA_SOURCE]
 AnnualFuelMixforElectricityGenerationbyEnergyProducts2005toJun2021: ${DEFAULT:energy_csv_file_path}/AnnualFuelMixforElectricityGenerationbyEnergyProducts2005toJun2021.csv
 AnnualMotorVehiclePopulationbyTypeofFuelUsed: ${DEFAULT:energy_csv_file_path}/AnnualMotorVehiclePopulationbyTypeofFuelUsed.csv
 AverageAnnualKilometresTravelledPerVehicle: ${DEFAULT:energy_csv_file_path}/AverageAnnualKilometresTravelledPerVehicle.csv
@@ -14,7 +14,6 @@ PeakSystemDemand2005toJul2021: ${DEFAULT:energy_csv_file_path}/PeakSystemDemand2
 SolarPVInstallationsbyURAPlanningRegion: ${DEFAULT:energy_csv_file_path}/SolarPVInstallationsbyURAPlanningRegion.csv
 ElectricityGenerationAndConsumption: ${DEFAULT:energy_csv_file_path}/ElectricityGenerationAndConsumption.xlsx
 ElectricityGenerationMonthlyData: ${DEFAULT:energy_csv_file_path}/ElectricityGenerationMonthlyData.xlsx
-SolarPVInstallationsbyURAPlanningRegion: ${DEFAULT:energy_csv_file_path}/SolarPVInstallationsbyURAPlanningRegion.csv
 TotalFinalEnergyConsumptionByEnergyTypeAndSector: ${DEFAULT:energy_csv_file_path}/TotalFinalEnergyConsumptionByEnergyTypeAndSector.xlsx
 LicensedLocalFoodFarm: ${DEFAULT:food_csv_file_path}/licensed_local_food_farm.xlsx
 LocalProductionAnnual: ${DEFAULT:food_csv_file_path}/local_production_annual.xlsx
