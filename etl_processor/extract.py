@@ -37,7 +37,7 @@ class CSVFileExtract:
     def retrieve_data_for_solar_pv_installations_by_ura_planning_region(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["SolarPVInstallationsbyURAPlanningRegion"]
         
-        dataframe = pandas.read_csv(file_name, skiprows=1, delimiter=",")
+        dataframe = pandas.read_csv(file_name, skiprows=0, delimiter=",")
 
         return dataframe
 
@@ -64,7 +64,7 @@ class ExcelFileExtract:
     def retrieve_data_for_local_production_annual(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["LocalProductionAnnual"]
         
-        dataframe = pandas.read_excel(file_name, header=31, nrows=12)
+        dataframe = pandas.read_excel(file_name, header=30, nrows=12)
 
         return dataframe
 
