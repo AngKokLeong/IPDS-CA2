@@ -1,11 +1,14 @@
 import configparser
 import os
-import db_manager.database_connection
+from database import database_connection, document_schema
 
-file_path: str = os.path.abspath("db_manager")
+
+file_path: str = os.path.abspath("database")
 
 config = configparser.ConfigParser(interpolation=configparser.ExtendedInterpolation())
 
 config.read(file_path + '/configuration/db-configuration.txt')
 
-mongodb_test_cluster = db_manager.database_connection.MongoDBTestCluster(config)
+mongodb_test_cluster = database_connection.MongoDBTestCluster(config)
+mongodb_document_schema = document_schema
+

@@ -1,13 +1,17 @@
 
 from mongoengine import Document, StringField, IntField, DecimalField
+import database.database_connection
+
 
 
 class ElectricityGenerationMonthlyData(Document):
+    meta = {"db_alias": database.database_connection.MongoDBTestCluster.connection_alias}
 
+   
     year: IntField = IntField(required=True, unique=True)
     electricity_generation = DecimalField(min_value=0)
     electricity_consumption = DecimalField(min_value=0)
-    industrial_related = = DecimalField(min_value=0)
+    industrial_related = DecimalField(min_value=0)
     manufacturing = DecimalField(min_value=0)
     construction = DecimalField(min_value=0)
     utilities = DecimalField(min_value=0)
@@ -18,11 +22,8 @@ class ElectricityGenerationMonthlyData(Document):
     information_and_communications = DecimalField(min_value=0)
     financial_and_insurance_activities = DecimalField(min_value=0)
     real_estate_activities = DecimalField(min_value=0)
-    professional = DecimalField(min_value=0)
-    scientific_and_technical = DecimalField(min_value=0)
-    administration_and_support_activities = DecimalField(min_value=0)
+    professional_scientific_and_technical_administration_and_support_activities = DecimalField(min_value=0)
     other_commerce_and_service_related = DecimalField(min_value=0)
     transport_related = DecimalField(min_value=0)
     households = DecimalField(min_value=0)
     others = DecimalField(min_value=0)
-
