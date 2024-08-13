@@ -122,6 +122,6 @@ class ExcelFileExtract:
     def retrieve_data_for_electricity_generation_monthly_data(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["ElectricityGenerationMonthlyData"]
         
-        dataframe = pandas.read_excel(file_name, header=29, nrows=2)
+        dataframe = pandas.read_excel(file_name, header=28, nrows=2)
 
         return dataframe
