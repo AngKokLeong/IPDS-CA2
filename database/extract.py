@@ -99,3 +99,16 @@ class PeakSystemDemand(MasterDataRetrieval):
 
     def retrieve_data(self) -> str:
         return self.mongoengine_document_queryset.exclude('id')
+    
+    
+class TotalFinalEnergyConsumptionByEnergyTypeAndSector(MasterDataRetrieval):
+
+    def __init__(self):
+        super().__init__()
+        self.mongoengine_document_queryset = database.document_schema.TotalFinalEnergyConsumptionByEnergyTypeAndSector.objects      
+
+    def display_record_count(self) -> int:
+        return len(self.mongoengine_document_queryset)
+
+    def retrieve_data(self) -> str:
+        return self.mongoengine_document_queryset.exclude('id')
