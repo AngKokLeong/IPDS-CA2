@@ -1,5 +1,5 @@
 
-from mongoengine import Document, StringField, IntField, DecimalField
+from mongoengine import Document, StringField, IntField, DecimalField, GenericReferenceField
 import database.database_connection
 
 
@@ -37,7 +37,7 @@ class ElectricityGenerationMonthlyData(Document):
 class LicensedLocalFoodFarm(Document):
     meta = {"db_alias": database.database_connection.MongoDBTestCluster.connection_alias}
 
-    month = StringField(required=True, unique=True)
+    year = StringField( required=True, unique=True)
     number_of_licensed_local_food_farms = IntField(min_value=0)
     sea_based_seafood = IntField(min_value=0)
     land_based_seafood = IntField(min_value=0)
@@ -53,20 +53,12 @@ class LocalFoodProduction(Document):
     total_value_of_local_production_million_dollars = IntField(min_value=0)
     seafood_million_dollars = IntField(min_value=0)
     vegetable_million_dollars = IntField(min_value=0)
+    hen_shell_eggs_million_dollars = IntField(min_value=0)
+    local_production_of_seafood_tonnes = IntField(min_value=0)
+    local_production_of_vegetables_tonnes = IntField(min_value=0)
+    local_production_of_hen_shell_eggs_million_tonnes = IntField(min_value=0)
+    local_production_of_aquarium_fish_million_pieces = IntField(min_value=0)
+    local_production_of_aquatic_plants_and_tissue_culture_plantlets_million_plants = IntField(min_value=0)
+    local_production_of_orchids_million_stalks = IntField(min_value=0)
+    local_production_of_ornamental_plants_million_plants = IntField(min_value=0)
 
-    vegetables = IntField(min_value=0)
-    hen_shell_eggs = IntField(min_value=0)
-    others = IntField(min_value=0)
-
-
-'''
-       'Hen Shell Eggs (Million Dollars)',
-       'Local Production Of Seafood (Tonnes)',
-       'Local Production Of Vegetables (Tonnes)',
-       'Local Production Of Hen Shell Eggs (Million Pieces)',
-       'Local Production Of Aquarium Fish (Million Pieces)',
-       'Local Production Of Aquatic Plants And Tissue Culture Plantlets (Million Plants)',
-       'Local Production Of Orchids (Million Stalks)',
-       'Local Production Of Ornamental Plants (Million Plants)'
-       
-'''
