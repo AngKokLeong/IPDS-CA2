@@ -87,6 +87,7 @@ class PeakSystemDemand(Document):
 class TotalFinalEnergyConsumptionByEnergyTypeAndSector(Document):
     meta = {"db_alias": database.database_connection.MongoDBTestCluster.connection_alias}
 
+    year_index: StringField = StringField(required=True, unique=True)
     year: StringField = StringField(required=True)
     sector: StringField = StringField(required=True)
     energy_products: StringField = StringField(required=True)
