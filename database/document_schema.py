@@ -81,3 +81,13 @@ class PeakSystemDemand(Document):
     year: IntField = IntField(required=True, min_value=0)
     month: IntField = IntField(required=True, min_value=0)
     peak_system_demand_mw: IntField = IntField(required=True, min_value=0)
+
+
+
+class TotalFinalEnergyConsumptionByEnergyTypeAndSector(Document):
+    meta = {"db_alias": database.database_connection.MongoDBTestCluster.connection_alias}
+
+    year: StringField = StringField(required=True)
+    sector: StringField = StringField(required=True)
+    energy_products: StringField = StringField(required=True)
+    consumption_ktoe: DecimalField = DecimalField(required=True)
