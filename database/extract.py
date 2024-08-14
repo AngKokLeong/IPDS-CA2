@@ -60,7 +60,17 @@ class LicensedLocalFoodFarm(MasterDataRetrieval):
 
 
 
+class LocalFoodProduction(MasterDataRetrieval):
 
+    def __init__(self):
+        super().__init__()
+        self.mongoengine_document_queryset = database.document_schema.LocalFoodProduction.objects      
+
+    def display_record_count(self) -> int:
+        return len(self.mongoengine_document_queryset)
+
+    def retrieve_data(self) -> str:
+        return self.mongoengine_document_queryset.exclude('id')
 
 
 
