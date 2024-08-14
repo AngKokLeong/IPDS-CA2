@@ -25,7 +25,8 @@ class TransformExcelFileData:
         dataframe = dataframe.rename(columns=lambda x: x.strip()).set_index("Data Series").transpose()
         # to clear the white space in another columns in dataframe after transpose
         dataframe = dataframe.rename(columns=lambda x: x.strip())
-        dataframe = dataframe.replace('na', value=0)
+        with pandas.option_context('future.no_silent_downcasting', True):
+            dataframe = dataframe.replace('na', value=0).astype(int)
         return dataframe.rename(columns={"Data Series": "Year"})
 
     
