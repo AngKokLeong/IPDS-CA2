@@ -74,3 +74,10 @@ class SolarPVInstallationsByURAPlanningRegion(Document):
     total_inst_cap_percent: DecimalField = DecimalField(min_value=0)
 
 
+class PeakSystemDemand(Document):
+    meta = {"db_alias": database.database_connection.MongoDBTestCluster.connection_alias}
+
+    year_month: StringField = StringField(min_length=0, unique=True, required=True)
+    year: IntField = IntField(required=True, min_value=0)
+    month: IntField = IntField(required=True, min_value=0)
+    peak_system_demand_mw: IntField = IntField(required=True, min_value=0)
