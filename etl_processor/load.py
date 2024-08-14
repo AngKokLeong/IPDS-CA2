@@ -145,3 +145,28 @@ class SolarPVInstallationsByURAPlanningRegion(MasterDataLoading):
                 except (NotUniqueError) as e:
                     print(e)
 
+
+
+
+class PeakSystemDemand(MasterDataLoading):
+
+    def __init__(self, dataframe: pandas.DataFrame):
+        super().__init__()
+        self.dataframe_to_load: pandas.DataFrame = dataframe
+        self.__processDataFrame()
+        
+    def __processDataFrame(self) -> None:
+    
+            for index, row in self.dataframe_to_load.iterrows():
+                self.peak_system_demand_document = database.document_schema.PeakSystemDemand()
+                try:
+                    self.peak_system_demand_document.year_month = (str(row["year"]) + "-" + str(row["mth"]))
+                    self.peak_system_demand_document.year = int(row["year"])
+                    self.peak_system_demand_document.month = int(row["mth"])
+                    self.peak_system_demand_document.peak_system_demand_mw  = int(row["peak_system_demand_mw"])
+                    self.peak_system_demand_document.save(force_insert=False)
+
+                except (NotUniqueError) as e:
+                    print(e)
+
+
