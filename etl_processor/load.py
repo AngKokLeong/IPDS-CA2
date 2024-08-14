@@ -170,3 +170,25 @@ class PeakSystemDemand(MasterDataLoading):
                     print(e)
 
 
+class TotalFinalEnergyConsumptionByEnergyTypeAndSector(MasterDataLoading):
+
+    def __init__(self, dataframe: pandas.DataFrame):
+        super().__init__()
+        self.dataframe_to_load: pandas.DataFrame = dataframe
+        self.__processDataFrame()
+        
+    def __processDataFrame(self) -> None:
+    
+            for index, row in self.dataframe_to_load.iterrows():
+                self.total_final_energy_consumption_by_energy_type_and_sector_document = database.document_schema.TotalFinalEnergyConsumptionByEnergyTypeAndSector()
+                try:
+                    self.total_final_energy_consumption_by_energy_type_and_sector_document.year_index = (str(index) + "-" + str(row["year"]))
+                    self.total_final_energy_consumption_by_energy_type_and_sector_document.year = str(row["year"])
+                    self.total_final_energy_consumption_by_energy_type_and_sector_document.sector = str(row["sector"])
+                    self.total_final_energy_consumption_by_energy_type_and_sector_document.energy_products = str(row["energy_products"])
+                    self.total_final_energy_consumption_by_energy_type_and_sector_document.consumption_ktoe = float(row["consumption_ktoe"])
+                    self.total_final_energy_consumption_by_energy_type_and_sector_document.save(force_insert=False)
+
+                except (NotUniqueError) as e:
+                    print(e)
+
