@@ -62,3 +62,15 @@ class LocalFoodProduction(Document):
     local_production_of_orchids_million_stalks = IntField(min_value=0)
     local_production_of_ornamental_plants_million_plants = IntField(min_value=0)
 
+
+class SolarPVInstallationsByURAPlanningRegion(Document):
+    meta = {"db_alias": database.database_connection.MongoDBTestCluster.connection_alias}
+
+    year: IntField = IntField(required=True, unique=True)
+    ura_planning_region: StringField = StringField(min_length=0)
+    residential_status: StringField = StringField(min_length=0)
+    num_solar_pv_inst: IntField = IntField(min_value=0)
+    inst_cap_kwac: DecimalField = DecimalField(min_value=0)
+    total_inst_cap_percent: DecimalField = DecimalField(min_value=0)
+
+
