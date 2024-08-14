@@ -71,7 +71,7 @@ class ExcelFileExtract:
     def retrieve_data_for_total_final_energy_consumption_by_energy_type_and_sector_for_total(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["TotalFinalEnergyConsumptionByEnergyTypeAndSector"]
         
-        dataframe = pandas.read_excel(file_name, header=106, nrows=13)
+        dataframe = pandas.read_excel(file_name, header=26, nrows=7)
 
         return dataframe
 
@@ -79,28 +79,36 @@ class ExcelFileExtract:
     def retrieve_data_for_total_final_energy_consumption_by_energy_type_and_sector_for_petroleum_products(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["TotalFinalEnergyConsumptionByEnergyTypeAndSector"]
         
-        dataframe = pandas.read_excel(file_name, header=97, nrows=7)
+        dataframe = pandas.read_excel(file_name, header=91, nrows=7)
 
         return dataframe
     
     def retrieve_data_for_total_final_energy_consumption_by_energy_type_and_sector_total_for_coal_and_peat(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["TotalFinalEnergyConsumptionByEnergyTypeAndSector"]
         
-        dataframe = pandas.read_excel(file_name, header=78, nrows=13)
+        dataframe = pandas.read_excel(file_name, header=100, nrows=7)
 
         return dataframe
+
+    def retrieve_data_for_total_final_energy_consumption_by_energy_type_and_sector_total_for_crude_oil(self) -> pandas.DataFrame:
+        file_name = self.configparser_object["DATA_SOURCE"]["TotalFinalEnergyConsumptionByEnergyTypeAndSector"]
+        
+        dataframe = pandas.read_excel(file_name, header=78, nrows=7)
+
+        return dataframe    
+
     
     def retrieve_data_for_total_final_energy_consumption_by_energy_type_and_sector_total_for_electricity(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["TotalFinalEnergyConsumptionByEnergyTypeAndSector"]
         
-        dataframe = pandas.read_excel(file_name, header=126, nrows=7)
+        dataframe = pandas.read_excel(file_name, header=114, nrows=7)
 
         return dataframe
 
     def retrieve_data_for_total_final_energy_consumption_by_energy_type_and_sector_total_for_natural_gas(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["TotalFinalEnergyConsumptionByEnergyTypeAndSector"]
         
-        dataframe = pandas.read_excel(file_name, header=136, nrows=7)
+        dataframe = pandas.read_excel(file_name, header=124, nrows=7)
 
         return dataframe
 
