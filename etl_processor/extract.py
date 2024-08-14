@@ -30,7 +30,7 @@ class CSVFileExtract:
     def retrieve_data_for_peak_system_demand_2005_to_jul_2021(self) -> pandas.DataFrame:
         file_name = self.configparser_object["DATA_SOURCE"]["PeakSystemDemand2005toJul2021"]
         
-        dataframe = pandas.read_csv(file_name, skiprows=1, delimiter=",")
+        dataframe = pandas.read_csv(file_name, skiprows=0, delimiter=",")
 
         return dataframe
 
