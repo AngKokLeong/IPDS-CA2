@@ -133,3 +133,10 @@ class ExcelFileExtract:
         dataframe = pandas.read_excel(file_name, header=28, nrows=2)
 
         return dataframe
+    
+    def retrieve_data_for_household_electricity_consumption_by_dwelling_type(self) -> pandas.DataFrame:
+        file_name = self.configparser_object["DATA_SOURCE"]["SingaporeEnergyStatistics"]
+
+        dataframe = pandas.read_excel(file_name, sheet_name="T3.4", header=0, nrows=2411)
+
+        return dataframe
