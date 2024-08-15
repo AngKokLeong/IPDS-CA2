@@ -18,3 +18,4 @@ TotalFinalEnergyConsumptionByEnergyTypeAndSector: ${DEFAULT:energy_csv_file_path
 LicensedLocalFoodFarm: ${DEFAULT:food_csv_file_path}/licensed_local_food_farm.xlsx
 LocalProductionAnnual: ${DEFAULT:food_csv_file_path}/local_production_annual.xlsx
 ValueOfLocalFoodProductionInSingapore: ${DEFAULT:food_csv_file_path}/ValueofLocalFoodProductioninSingapore.csv
+SingaporeEnergyStatistics: ${DEFAULT:energy_csv_file_path}/SES_Public_2023_tidy.xlsx.coredownload.xlsx
