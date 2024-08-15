@@ -34,8 +34,8 @@ class TransformExcelFileData:
             dataframe = dataframe.rename(columns=lambda x: x.strip()).set_index("Data Series").transpose()
             # to clear the white space in another columns in dataframe after transpose
             dataframe = dataframe.rename(columns=lambda x: x.strip())
-            with pandas.option_context('future.no_silent_downcasting', True):
-                dataframe = dataframe.replace('na', value=0).astype(int)
+
+            dataframe = dataframe.replace('na', value=0).astype(int)
             return dataframe.rename(columns={"Data Series": "Year"})
 
         return dataframe
@@ -51,35 +51,32 @@ class TransformExcelFileData:
     
     def transform_total_energy_consumption_by_energy_type_and_sector_for_all_products(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
         # total_final_energy_consumption_by_energy_type_and_sector_for_total_dataframe
-        with pandas.option_context('future.no_silent_downcasting', True):
-            return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:]
+        
+        return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:]
 
  
     def transform_total_energy_consumption_by_energy_type_and_sector_total_for_coal_and_peat(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
        
-        with pandas.option_context('future.no_silent_downcasting', True):
-            return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:]
+        
+        return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:]
 
 
     def transform_total_final_energy_consumption_by_energy_type_and_sector_total_for_electricity(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
 
-        with pandas.option_context('future.no_silent_downcasting', True):
-            return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]][1:]
+        return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]][1:]
 
     def transform_total_final_energy_consumption_by_energy_type_and_sector_total_for_natural_gas(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
                 
-        with pandas.option_context('future.no_silent_downcasting', True):
-            return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]][1:]
+        return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]][1:]
 
     def transform_total_final_energy_consumption_by_energy_type_and_sector_for_petroleum_products(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
                 
-        with pandas.option_context('future.no_silent_downcasting', True):
-            return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:] 
+        return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:] 
 
     def transform_total_final_energy_consumption_by_energy_type_and_sector_for_crude_oil(self, dataframe: pandas.DataFrame) -> pandas.DataFrame:
                 
-        with pandas.option_context('future.no_silent_downcasting', True):
-            return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:] 
+        
+        return dataframe.rename(columns=lambda x: x.strip())[["Data Series", "2021", "2020"]].replace('-', value=0)[1:] 
 
 
 class TransformCSVFileData:
